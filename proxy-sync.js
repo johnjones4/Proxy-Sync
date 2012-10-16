@@ -44,6 +44,10 @@ http.createServer(function(request, response) {
       systemConfiguration.url = params.next;
       console.log('Switching to: ' + systemConfiguration.url);
     }
+    if (params.scrollTop) {
+      systemConfiguration.scrollTop = params.scrollTop;
+      console.log(params.scrollTop);
+    }
     response.write(systemConfiguration.url);
     response.end();
   } else {

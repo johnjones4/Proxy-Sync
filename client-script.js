@@ -49,7 +49,8 @@
 	var interval;
 	var startScanning = function() {
 		interval = window.setInterval(function() {
-			sendRequest(ADFERO_LABS_PING_URL+'?v='+(new Date().getTime()),function(newURL) {
+			var url = ADFERO_LABS_PING_URL+'?v='+(new Date().getTime())+'&scrollTop='+(document.body.scrollTop / document.body.height);
+			sendRequest(url,function(newURL) {
 				if (differentURL(newURL,window.location.href)) {
 		        	window.clearInterval(interval);
 		        	window.location.href=newURL;
